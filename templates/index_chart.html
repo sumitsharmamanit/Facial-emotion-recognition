@@ -1,0 +1,59 @@
+<html>
+  <head>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Amusement',  1],
+          ['Anxiety',    1],
+          ['Surprise',    1],
+          ['Fear',    1],
+          ['Interest',    1],
+          ['Relief',    1],
+          ['Joy',      1],
+          ['Pleasure', 1],
+          ['Pride',     1],
+          ['Sadness',    1],
+          ['Despair',    1],
+          ['Disgust',    1],
+          ['Anger',    1],
+          ['Irritation',    1]
+        ]);
+
+        var options = {
+          title: 'Select what you have felt',
+          //pieSliceBorderColor:"transparent",
+          pieSliceBorderWeight	: '50px',
+          pieHole: 0.5,
+          pieSliceText: 'label',
+          sliceVisibilityThreshold: 0,
+          enableInteractivity: true,
+          pieHole: 0.6,
+          titleTextStyle: {
+            bold: true,
+            fontSize: 16,
+          },
+          pieSliceTextStyle: {
+            color: 'black',
+            bold: true,
+            fontSize: 11,
+            opacity: 1
+          },
+          legend: 'none',
+          colors: ['#FF9404','#FFC204','#FFD504','#FFEB04','#E5FF04','#CBFF04','#ACFF04','#77FF04','#04FF56','#04FFE6','#0465FF','#9204FF','#FF040F','#FF4804'],
+          tooltip: {trigger: 'none'}
+        };
+
+
+        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="donutchart" style="width: 600px; height: 600px;"></div>
+  </body>
+</html>
